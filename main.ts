@@ -1,3 +1,9 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (Squirtle.vy == 0) {
+        Squirtle.vy = -250
+    }
+})
+let Squirtle: Sprite = null
 scene.setBackgroundColor(7)
 scene.setBackgroundImage(img`
     7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
@@ -121,7 +127,7 @@ scene.setBackgroundImage(img`
     1111111111111111111111115111555544444444455551155542277777777777777777777777772224445115542777777777777777777777777777777777777777777777777777772222445551111111
     1111111111111111111111111111111155555555555511111542222222222222222222222222222444555115544277777777777777777777777777777777777777777777777777777222445551111111
     `)
-let Squirtle = sprites.create(img`
+Squirtle = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
     . . . . . . . . . . . . . . . . 
@@ -139,4 +145,9 @@ let Squirtle = sprites.create(img`
     . . . . . . . 4 4 4 4 . . . . . 
     . . . . . . . . . . . . . . . . 
     `, SpriteKind.Player)
+controller.moveSprite(Squirtle, 200, 0)
+Squirtle.setPosition(23, 16)
 tiles.setCurrentTilemap(tilemap`livello1`)
+game.onUpdate(function () {
+    Squirtle.ay = 500
+})
