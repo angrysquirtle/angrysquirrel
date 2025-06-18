@@ -13,6 +13,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera0`, function (sprit
     game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera2`, function (sprite, location) {
+    tiles.setTileAt(location, assets.tile`transparency16`)
     info.changeScoreBy(1)
 })
 let Squirtle: Sprite = null
