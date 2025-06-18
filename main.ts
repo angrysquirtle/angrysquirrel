@@ -153,6 +153,24 @@ controller.moveSprite(Squirtle, 200, 0)
 Squirtle.setPosition(23, 16)
 tiles.setCurrentTilemap(tilemap`livello1`)
 scene.cameraFollowSprite(Squirtle)
+game.setDialogFrame(img`
+    2 2 2 4 4 4 4 4 2 2 2 2 2 2 2 
+    2 2 4 4 5 5 5 4 2 2 2 2 2 2 2 
+    4 4 4 5 5 5 5 4 4 4 4 4 4 4 2 
+    4 5 5 5 5 5 5 5 5 5 5 5 5 4 2 
+    4 4 5 5 5 5 5 5 5 5 5 5 4 4 2 
+    2 2 5 4 5 5 5 5 5 5 5 5 4 2 2 
+    2 4 5 5 5 5 5 5 5 5 5 4 4 4 2 
+    4 5 5 5 5 5 5 5 5 5 5 5 4 4 2 
+    4 5 5 5 5 5 5 5 5 5 5 5 4 4 2 
+    4 4 5 5 5 5 5 5 5 5 5 5 5 4 2 
+    2 4 5 5 5 5 5 5 5 5 5 4 4 4 2 
+    2 4 5 5 5 5 5 5 5 5 4 4 4 4 4 
+    4 5 5 4 4 4 5 5 4 4 4 4 2 2 2 
+    4 5 4 4 2 4 4 5 4 2 2 2 2 2 2 
+    2 4 4 2 2 2 4 4 4 2 2 2 2 2 2 
+    `)
+game.showLongText("Scappa dalla foresta in FIAMME!", DialogLayout.Bottom)
 game.onUpdate(function () {
     Squirtle.ay = 500
 })
