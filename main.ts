@@ -1,6 +1,6 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Squirtle.vy == 0) {
-        Squirtle.vy = -100
+        Squirtle.vy = -200
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera`, function (sprite, location) {
