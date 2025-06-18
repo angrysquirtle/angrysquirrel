@@ -3,6 +3,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         Squirtle.vy = -250
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera`, function (sprite, location) {
+    game.gameOver(false)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera3`, function (sprite, location) {
+    game.gameOver(true)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera0`, function (sprite, location) {
     game.gameOver(false)
 })
