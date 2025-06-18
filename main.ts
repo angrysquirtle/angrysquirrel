@@ -3,6 +3,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         Squirtle.vy = -250
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera0`, function (sprite, location) {
+    game.gameOver(false)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera2`, function (sprite, location) {
+    tiles.setTileAt(location, assets.tile`transparency16`)
+    info.changeScoreBy(1)
+})
 let Squirtle: Sprite = null
 scene.setBackgroundColor(7)
 scene.setBackgroundImage(img`
@@ -128,26 +135,31 @@ scene.setBackgroundImage(img`
     1111111111111111111111111111111155555555555511111542222222222222222222222222222444555115544277777777777777777777777777777777777777777777777777777222445551111111
     `)
 Squirtle = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . 4 4 4 . . . . . . . . . . . 
-    . 4 4 4 4 4 . . . . 4 . . . . . 
-    4 4 e e 4 4 . . . . . 4 4 4 . . 
-    4 e . . 4 4 4 . . . . 4 4 f 4 . 
-    4 e . . 4 4 4 . . . 4 4 4 4 4 e 
-    . e . . 4 4 4 . . 4 4 4 1 . . . 
-    . . e . . 4 4 . 4 4 4 4 4 4 . . 
-    . . . . . 4 4 . 4 4 e 1 . . . . 
-    . . . . . 4 4 4 4 1 1 1 . . . . 
-    . . . . . e e 4 4 1 1 . . . . . 
-    . . . . . . . 4 4 4 4 . . . . . 
-    . . . . . . . . . . . . . . . . 
+    ....................
+    ....................
+    ....................
+    ....................
+    ....................
+    ...fff..............
+    ..f444f.............
+    .f44444f.....f......
+    f44ee44f....f4ffff..
+    f4eff444f....f444ff.
+    f4ef.f44f....f44f4f.
+    f4ef..f4f..ff44444ef
+    ffef..f4fff44441fff.
+    .ff...f4f44444444f..
+    .....f44f4444e1ff...
+    .....f44f4444e1f....
+    .....f444441111f....
+    .....fee444111f.....
+    ......ff444444f.....
+    ........ffffff......
     `, SpriteKind.Player)
-controller.moveSprite(Squirtle, 200, 0)
+controller.moveSprite(Squirtle, 80, 0)
 Squirtle.setPosition(23, 16)
 tiles.setCurrentTilemap(tilemap`livello1`)
+scene.cameraFollowSprite(Squirtle)
 game.onUpdate(function () {
     Squirtle.ay = 500
 })
