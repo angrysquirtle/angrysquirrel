@@ -3,6 +3,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         Squirtle.vy = -250
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera0`, function (sprite, location) {
+    game.gameOver(false)
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera2`, function (sprite, location) {
+    info.changeScoreBy(1)
+})
 let Squirtle: Sprite = null
 scene.setBackgroundColor(7)
 scene.setBackgroundImage(img`
