@@ -7,7 +7,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera`, function (sprite
     game.gameOver(false)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera3`, function (sprite, location) {
-    game.gameOver(true)
+    Squirtle.setPosition(0, 640)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera0`, function (sprite, location) {
     game.gameOver(false)
@@ -179,6 +179,26 @@ game.setDialogFrame(img`
     2 4 4 2 2 2 4 4 4 2 2 2 2 2 2 
     `)
 game.showLongText("Scappa dalla foresta in FIAMME!", DialogLayout.Bottom)
+let commessa = sprites.create(img`
+    . . . . f f f f . . . . . 
+    . . f f f f f f f f . . . 
+    . f f f f f f c f f f . . 
+    f f f f f f c c f f f c . 
+    f f f c f f f f f f f c . 
+    c c c f f f e e f f c c . 
+    f f f f f e e f f c c f . 
+    f f f b f e e f b f f f . 
+    . f 4 1 f 4 4 f 1 4 f . . 
+    . f e 4 4 4 4 4 4 e f . . 
+    . f f f e e e e f f f . . 
+    f e f b 7 7 7 7 b f e f . 
+    e 4 f 7 7 7 7 7 7 f 4 e . 
+    e e f 6 6 6 6 6 6 f e e . 
+    . . . f f f f f f . . . . 
+    . . . f f . . f f . . . . 
+    `, SpriteKind.Enemy)
+commessa.setPosition(23, 16)
+commessa.follow(Squirtle, 60)
 game.onUpdate(function () {
-    Squirtle.ay = 200
+    Squirtle.ay = 500
 })
