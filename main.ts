@@ -180,5 +180,5 @@ game.setDialogFrame(img`
     `)
 game.showLongText("Scappa dalla foresta in FIAMME!", DialogLayout.Bottom)
 game.onUpdate(function () {
-    Squirtle.ay = 400
+    Squirtle.ay = 200
 })
