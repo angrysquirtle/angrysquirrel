@@ -148,6 +148,7 @@ Squirtle = sprites.create(img`
 controller.moveSprite(Squirtle, 200, 0)
 Squirtle.setPosition(23, 16)
 tiles.setCurrentTilemap(tilemap`livello1`)
+scene.cameraFollowSprite(Squirtle)
 game.onUpdate(function () {
     Squirtle.ay = 500
 })
