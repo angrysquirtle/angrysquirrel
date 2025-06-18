@@ -1,6 +1,6 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (Squirtle.vy == 0) {
-        Squirtle.vy = -200
+        Squirtle.vy = -220
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`miaTessera`, function (sprite, location) {
@@ -140,26 +140,21 @@ scene.setBackgroundImage(img`
     1111111111111111111111111111111155555555555511111542222222222222222222222222222444555115544277777777777777777777777777777777777777777777777777777222445551111111
     `)
 Squirtle = sprites.create(img`
-    ...fff..............
-    ..f444f.............
-    .f44444f.....f......
-    f44ee44f....f4ffff..
-    f4eff444f....f444ff.
-    f4ef.f44f....f44f4f.
-    f4ef..f4f..ff44444ef
-    ffef..f4fff44444f22.
-    .ff...f4f44444444f..
-    .....f44f4444e1ff...
-    .....f44f4444e1f....
-    .....f444441111f....
-    .....fee444111f.....
-    ......ff444444f.....
-    ......fffffffff.....
-    .....f222f.f222f....
-    .....f2f22ff2f22f...
-    .....f2f212f2f212f..
-    .....f2f222f2f222f..
-    .....ff.fff.f.fff...
+    . . . f f f . . . . . . . . . . . . . 
+    . . f 4 4 4 f . . . . . . . . . . . . 
+    . f 4 4 4 4 4 f . . . . . f . . . . . 
+    f 4 4 e e 4 4 f . . . . f 4 f f f f . 
+    f 4 e f f 4 4 4 f . . . . f 4 4 4 f f 
+    f 4 e f . f 4 4 f . . . . f 4 4 f 4 f 
+    f 4 e f . . f 4 f . . f f 4 4 4 4 4 e 
+    f f e f . . f 4 f f f 4 4 4 4 3 f f f 
+    . f f . . . f 4 f 4 4 4 4 4 4 4 4 f . 
+    . . . . . f 4 4 f 4 4 4 4 e 1 f f . . 
+    . . . . . f 4 4 f 4 4 4 4 e 1 f . . . 
+    . . . . . f 4 4 4 4 4 1 1 1 1 f . . . 
+    . . . . . f e e 4 4 4 1 1 1 f . . . . 
+    . . . . . . f f 4 4 4 4 4 4 f . . . . 
+    . . . . . . f f f f f f f f . . . . . 
     `, SpriteKind.Player)
 controller.moveSprite(Squirtle, 200, 0)
 Squirtle.setPosition(23, 16)
@@ -184,5 +179,5 @@ game.setDialogFrame(img`
     `)
 game.showLongText("Scappa dalla foresta in FIAMME!", DialogLayout.Bottom)
 game.onUpdate(function () {
-    Squirtle.ay = 500
+    Squirtle.ay = 400
 })
